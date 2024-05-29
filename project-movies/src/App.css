@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 :root {
   --gray-darker: #444444;
   --gray-dark: #696969;
@@ -47,9 +49,9 @@ img {
 }
 
 .title {
-display: flex;
-flex-direction: column;
-color: red;
+  display: flex;
+  flex-direction: column;
+  color: red;
 }
 
 .card {
@@ -68,14 +70,28 @@ color: red;
   filter: contrast(100%);
 }
 
-.card__content {
+.card_content {
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
   padding: 1rem;
 }
 
-.card__image {
+.card_footer {
+  display: flex;
+  justify-content: center;
+}
+
+.card_footer button {
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: red;
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+}
+
+.card_image {
   background-position: center center;
   border-top-left-radius: 1.25rem;
   border-top-right-radius: 1.25rem;
@@ -85,21 +101,21 @@ color: red;
   transition: filter 0.5s cubic-bezier(.43, .41, .22, .91);
 }
 
-.card__image::before {
+.card_image::before {
   content: "";
   display: block;
   padding-top: 56.25%;
 }
 
 @media(min-width: 40rem) {
-  .card__image::before {
-      padding-top: 66.6%;
+  .card_image::before {
+    padding-top: 66.6%;
   }
 }
 
-.card__title {
-  color: var(--red);
-  font-size: 1.5rem;
+.card_title {
+  color: red;
+  font-size: 1rem;
   font-weight: 300;
   height: 50px;
   text-align: center;
@@ -111,7 +127,7 @@ color: red;
   text-transform: uppercase;
 }
 
-.card__text {
+.card_text {
   flex: 1 1 auto;
   font-size: 0.875rem;
   line-height: 1.5;
@@ -120,10 +136,12 @@ color: red;
 
 
 h1 {
-color: rgb(252, 249, 249);
-text-align: center;
+  color: red;
+  /* color: rgb(252, 249, 249); */
+  text-align: center;
+
 }
 
 p {
-text-align: justify;
+  text-align: justify;
 }
