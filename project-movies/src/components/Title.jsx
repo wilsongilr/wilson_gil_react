@@ -1,6 +1,6 @@
 function Title(props) {
 
-    return <h1>{props.title}</h1>
+    return <h2 className="subtitle">{props.title}</h2>
 }
 
 export default Title;

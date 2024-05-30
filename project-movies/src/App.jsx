@@ -20,6 +20,11 @@ function App() {
   const incrementarContador = () => {
     setPagina(pagina + 1)
   }
+
+
+  const decrementarContador = () => {
+    setPagina(pagina - 1)
+  }
   return (
     <>
      <h1>Serie Rick and Morty </h1>
@@ -33,7 +38,7 @@ function App() {
       </div>
       <div className='card_footer'>
         <button onClick={incrementarContador} >next</button>
-        <button onClick={incrementarContador} >previous </button>
+        <button onClick={decrementarContador} >previous </button>
       </div>
 
     </>
