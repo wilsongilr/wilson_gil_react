@@ -5,6 +5,7 @@
 
 import { useState, useEffect } from 'react'
 import Card from './components/CardComponent'
+import Pagination from './Pagination';
 import './App.css'
 
 
@@ -12,34 +13,68 @@ import './App.css'
 function App() {
   const [pagina, setPagina] = useState(0)
   const [personajes, setPersonajes] = useState([])
+  const [info, setInfo] = useState([])
   useEffect(() => {
     fetch(`https://rickandmortyapi.com/api/character/?page=${pagina}`)
       .then((response) => response.json())
       .then((data) => setPersonajes(data.results))
+      .then((info) => setInfo(info))
   }, [pagina])
-  const incrementarContador = () => {
-    setPagina(pagina + 1)
-  }
+  // const incrementarContador = () => {
+  //   setPagina(pagina + 1)
+  // }
+
+  // const decrementarContador = () => {
+  //   setPagina(pagina - 1)
+  // }
 
 
-  const decrementarContador = () => {
-    setPagina(pagina - 1)
-  }
+  const PaginatedComponent = () => {
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 20;
+  
+    const handlePageChange = (pageNumber) => {
+      setCurrentPage(pageNumber);
+    };
+  
+    const getCurrentPageItems = () => {
+      const startIndex = (currentPage - 1) * itemsPerPage;
+      const endIndex = startIndex + itemsPerPage;
+      return info.slice(startIndex, endIndex);
+    };
+
+
+
   return (
     <>
-     <h1>Serie Rick and Morty </h1>
+      <h1>Serie Rick and Morty </h1>
       <div className="container">
         {personajes.length !== 0 && personajes.map((personaje) => (
 
           <Card key={personaje.id} title={personaje.name} genre={personaje.gender} status={personaje.status} img={personaje.image} />
 
         ))}
-
       </div>
-      <div className='card_footer'>
-        <button onClick={incrementarContador} >next</button>
+      {/* <div className='card_footer'>
         <button onClick={decrementarContador} >previous </button>
+        <button onClick={incrementarContador} >next</button>
+        </div> */}
+
+      <div>
+        <ul>
+          {getCurrentPageItems().map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
+        <Pagination
+          totalItems={info.count}
+          itemsPerPage={itemsPerPage}
+          currentPage={currentPage}
+          onPageChange={handlePageChange}
+        />
       </div>
+
+
 
     </>
   )

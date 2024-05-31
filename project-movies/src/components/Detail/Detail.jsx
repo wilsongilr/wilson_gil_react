@@ -5,10 +5,8 @@ function Details(props) {
     return (
 
         <div className="card_text">
-            <p>Genero: {props.genre}</p>
-
-            <p>Status: {props.status}</p>
-
+            <p><b>Genero:</b>  {props.genre}</p>
+            <p><b>Status:</b> {props.status}</p>
         </div>
     );
 
