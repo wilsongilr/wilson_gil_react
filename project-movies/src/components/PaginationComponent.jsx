@@ -2,8 +2,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faForwardFast, faBackwardFast } from '@fortawesome/free-solid-svg-icons';
 
 const PaginationComponent = ({ pageCount, onPageChange, pagina }) => {
+    
     const pageNumbers = [];
-
     for (let i = 1; i <= pageCount; i++) {
         pageNumbers.push(i);
     }
