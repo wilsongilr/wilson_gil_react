@@ -1,15 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+@font-face {
+  font-family: 'Get Schwifty';
+  src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/3089507/get-schwifty.woff') format('woff');
+}
+
 :root {
   --gray-darker: #444444;
   --gray-dark: #696969;
   --gray: #999999;
-  --bodybackground: #dee2e6;
+  --bodybackground: black;
   --red: #272121;
   --gray-light: #cccccc;
   --gray-lighter: #ececec;
   --gray-lightest: lighten(@gray-lighter, 4%);
-
 }
 
 *,
@@ -34,8 +38,8 @@ body {
 }
 
 img {
-  height: 300px;
-  width: 100%;
+  height: 250px;
+  width: 300px;
 }
 
 
@@ -43,9 +47,53 @@ img {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.header-box {
+  background-color: white;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.btn-search {
+  border: 1px solid black;
+  background-color: #97ce4c;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bolder;
+  font-family: "Get Schwifty";
+  color: black;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  width: 6rem;
+  height: 3rem;
+}
+
+.btn-search:hover {
+  border: 2px solid #97ce4c;
+  background-color: black ;
+  color: #97ce4c;
+}
+
+select {
+  color: #97ce4c;
+  background-color: white;
+  font-weight: bolder;
+}
+
+
+.box-title{
+  margin: 2rem;
+  
+}
+
+.box-filter{
+  display: flex;
+  justify-content: center;
 }
 
 .title {
@@ -62,7 +110,7 @@ img {
   flex-direction: column;
   overflow: hidden;
   /* padding: 0.5rem; */
-  width: 300px;
+  width: 250px;
   margin: 1rem;
 }
 
@@ -82,7 +130,7 @@ img {
   justify-content: center;
 }
 
-button {
+/* button {
   border: 1px solid black;
   border-radius: 5px;
   background-color: #7e29a0;
@@ -90,9 +138,9 @@ button {
   font-weight: 500;
   color: rgb(189, 31, 31);
   width: 10rem;
-  padding: 10px;
+  padding: 5px;
   margin: 0 0.5rem;
-}
+} */
 .btn-items{
   border: 1px solid black;
   border-radius: 5px;
@@ -174,6 +222,7 @@ h1 {
   color: #97ce4c;
   /* color: rgb(252, 249, 249); */
   text-align: center;
+  font-family: "Get Schwifty";
 
 }
 
@@ -194,3 +243,17 @@ b {
   color: #272121;
 }
 
+
+.filter {
+  border-radius: 8px;
+  margin: 0.5rem;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Get Schwifty";
+  padding: 0.5rem;
+  color: black; 
+}
+
+option {
+  font-family: "Get Schwifty";
+}
